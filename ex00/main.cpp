@@ -17,7 +17,7 @@
 #include "WrongCat.hpp"
 #include <iostream>
 
-int main(void) {
+/* int main(void) {
     std::cout << "\n=== TEST 1: Basic polymorphism (should work) ===\n" << std::endl;
 
     const Animal* meta = new Animal();
@@ -26,10 +26,9 @@ int main(void) {
 
     std::cout << j->getType() << " " << std::endl;
     std::cout << i->getType() << " " << std::endl;
-    i->makeSound();    // cat sound
-    j->makeSound();    // dog sound
-    meta->makeSound(); // animal sound
-
+    i->makeSound();
+    j->makeSound();    
+    meta->makeSound(); 
     delete meta;
     delete j;
     delete i;
@@ -40,21 +39,28 @@ int main(void) {
     const WrongAnimal* wrongI = new WrongCat();
 
     std::cout << wrongI->getType() << " " << std::endl;
-    wrongI->makeSound();   // → llama WrongAnimal::makeSound() (no el de WrongCat)
+    wrongI->makeSound();
     wrongMeta->makeSound();
 
     delete wrongMeta;
     delete wrongI;
 
-    std::cout << "\n=== TEST 3: Más pruebas (copia, etc.) ===\n" << std::endl;
+    std::cout << "\n=== TEST COPY ===\n" << std::endl;
 
     Dog basic;
     {
-        Dog tmp = basic;   // copy constructor
-    } // tmp se destruye aquí
+        Dog tmp = basic;
+    } 
 
     Cat copyCat;
-    copyCat = Cat();       // assignment
+    copyCat = Cat();
 
     return 0;
 }
+ */
+
+ int main()
+ {
+    Animal animal ("Perro");
+    return 0;
+ }

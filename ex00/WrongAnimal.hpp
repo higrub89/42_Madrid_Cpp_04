@@ -27,7 +27,7 @@ public:
     ~WrongAnimal(void);
 
     std::string const & getType(void) const;
-    void makeSound(void) const;  // ¡SIN virtual!
+    void makeSound(void) const;
 };
 
 #endif
