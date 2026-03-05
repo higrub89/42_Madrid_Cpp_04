@@ -18,7 +18,7 @@
 #include <iostream>
 
 int main(void) {
-    std::cout << "\n=== TEST 1: Basic polymorphism (should work) ===\n" << std::endl;
+    std::cout << "\n=== TEST 1: BASIC POLYMORPHISM ===\n" << std::endl;
 
     const Animal* meta = new Animal();
     const Animal* j = new Dog();
@@ -34,7 +34,7 @@ int main(void) {
     delete j;
     delete i;
 
-    std::cout << "\n=== TEST 2: Wrong versions (no polymorphism) ===\n" << std::endl;
+    std::cout << "\n=== TEST 2: WRONG NO POLYMORPHISM ===\n" << std::endl;
 
     const WrongAnimal* wrongMeta = new WrongAnimal();
     const WrongAnimal* wrongI = new WrongCat();
@@ -46,13 +46,13 @@ int main(void) {
     delete wrongMeta;
     delete wrongI;
 
-    std::cout << "\n=== TEST 3: Más pruebas (copia, etc.) ===\n" << std::endl;
+    std::cout << "\n=== TEST 3: TEST COPY ===\n" << std::endl;
 
     Dog basic;
     {
         Dog tmp = basic;
     }
-
+    
     Cat copyCat;
     copyCat = Cat();
 
