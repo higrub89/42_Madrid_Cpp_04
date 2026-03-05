@@ -26,9 +26,9 @@ int main(void) {
 
     std::cout << j->getType() << " " << std::endl;
     std::cout << i->getType() << " " << std::endl;
-    i->makeSound();    // cat sound
-    j->makeSound();    // dog sound
-    meta->makeSound(); // animal sound
+    i->makeSound(); 
+    j->makeSound();    
+    meta->makeSound(); 
 
     delete meta;
     delete j;
@@ -40,7 +40,7 @@ int main(void) {
     const WrongAnimal* wrongI = new WrongCat();
 
     std::cout << wrongI->getType() << " " << std::endl;
-    wrongI->makeSound();   // → llama WrongAnimal::makeSound() (no el de WrongCat)
+    wrongI->makeSound();   
     wrongMeta->makeSound();
 
     delete wrongMeta;
@@ -50,11 +50,11 @@ int main(void) {
 
     Dog basic;
     {
-        Dog tmp = basic;   // copy constructor
-    } // tmp se destruye aquí
+        Dog tmp = basic;
+    }
 
     Cat copyCat;
-    copyCat = Cat();       // assignment
+    copyCat = Cat();
 
     return 0;
 }
