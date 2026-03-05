@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "Brain.hpp"
@@ -18,38 +18,36 @@
 
 int main(void) {
     std::cout << "\n==================================================\n";
-    std::cout << "  TEST 1: RESTRICCIÓN DE CLASE ABSTRACTA            \n";
+    std::cout << "  TEST 1: RESTRIC ABSTRACT CLASS                    \n";
     std::cout << "==================================================\n\n";
 
-    std::cout << "Intentar instanciar un 'Animal' directamente dará error de compilación.\n";
-    std::cout << "Descomenta la línea 26 para comprobar la protección estructural.\n";
-    
-    // ANIMAL GENÉRICO BLOQUEADO POR EL COMPILADOR:
-    // Animal testAnimal; 
-    // const Animal* meta = new Animal();
+    /* AAnimal prueba = AAnimal(); */
 
+    Dog AmericanPitbull;
+    Cat Tommy;
+    
     std::cout << "\n==================================================\n";
-    std::cout << "  TEST 2: POLIMORFISMO Y ELIMINACIÓN BÁSICA       \n";
+    std::cout << "  TEST 2: POLYMORFISM AND BÁSIC DELETE              \n";
     std::cout << "==================================================\n\n";
     
-    // El polimorfismo a través de punteros a la clase base abstracta SIGUE PERMITIDO
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
+
+    const AAnimal* j = new Dog();
+    const AAnimal* i = new Cat();
     
-    std::cout << "\n--- Audio Test ---" << std::endl;
-    j->makeSound(); // Llama a Dog::makeSound()
-    i->makeSound(); // Llama a Cat::makeSound()
+    std::cout << "\n--- Sound Test ---/n" << std::endl;
+    j->makeSound();
+    i->makeSound(); 
     
-    std::cout << "\n--- Liberación de Memoria ---" << std::endl;
+    std::cout << "\n--- free memory ---/n" << std::endl;
     delete j;
     delete i;
 
     std::cout << "\n==================================================\n";
-    std::cout << "  TEST 3: ARREGLO DE ANIMALES Y DEEP COPY (Control)\n";
+    std::cout << "  TEST 3: ARRAY ANIMALS AND DEEP COPY               \n";
     std::cout << "==================================================\n\n";
     
     const int numAnimals = 4;
-    Animal* animals[numAnimals];
+    AAnimal* animals[numAnimals];
     
     for (int idx = 0; idx < numAnimals; ++idx) {
         if (idx < numAnimals / 2) {
@@ -58,11 +56,12 @@ int main(void) {
             animals[idx] = new Cat();
         }
     }
-    
+
+    std::cout << "\n--- sound---\n" << std::endl;
     for (int idx = 0; idx < numAnimals; ++idx) {
         animals[idx]->makeSound();
     }
-    
+    std::cout << "\n" << std::endl;
     for (int idx = 0; idx < numAnimals; ++idx) {
         delete animals[idx];
     }

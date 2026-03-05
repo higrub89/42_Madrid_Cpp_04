@@ -26,7 +26,6 @@ public:
     Brain& operator=(const Brain& other);
     ~Brain(void);
 
-    // --- NUEVA INTERFAZ EXIGIDA ---
     void setIdea(int index, std::string const & idea);
     std::string const & getIdea(int index) const;
 };

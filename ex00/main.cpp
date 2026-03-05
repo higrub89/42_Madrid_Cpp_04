@@ -18,7 +18,9 @@
 #include <iostream>
 
 int main(void) {
-    std::cout << "\n=== TEST 1: BASIC POLYMORPHISM ===\n" << std::endl;
+    std::cout << "\n========================================\n";
+    std::cout << "  TEST 1: BASIC POLYMORPHISM              \n";
+    std::cout << "========================================\n\n";
 
     const Animal* meta = new Animal();
     const Animal* j = new Dog();
@@ -34,8 +36,9 @@ int main(void) {
     delete j;
     delete i;
 
-    std::cout << "\n=== TEST 2: WRONG NO POLYMORPHISM ===\n" << std::endl;
-
+    std::cout << "\n========================================\n";
+    std::cout << "  TEST 2: WRONG NO POLYMORPHISM           \n";
+    std::cout << "========================================\n\n";
     const WrongAnimal* wrongMeta = new WrongAnimal();
     const WrongAnimal* wrongI = new WrongCat();
 
@@ -46,7 +49,9 @@ int main(void) {
     delete wrongMeta;
     delete wrongI;
 
-    std::cout << "\n=== TEST 3: TEST COPY ===\n" << std::endl;
+    std::cout << "\n========================================\n";
+    std::cout << "  TEST 3: TEST COPY                       \n";
+    std::cout << "========================================\n\n";
 
     Dog basic;
     {

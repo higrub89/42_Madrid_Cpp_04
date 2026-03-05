@@ -17,7 +17,10 @@
 #include <iostream>
 
 int main(void) {
-    std::cout << "\n===  TEST 1: BASIC DELETE  ===\n" << std::endl;
+
+    std::cout << "\n==================================================\n";
+    std::cout << "          TEST 1: BASIC DELETE                       \n";
+    std::cout << "==================================================\n\n";
     {
         const Animal* j = new Dog();
         const Animal* i = new Cat();
@@ -25,7 +28,10 @@ int main(void) {
         delete i;
     }
 
-    std::cout << "\n=== TEST 2:  ANIMALS ARRAYS  ===\n" << std::endl;
+    std::cout << "\n==================================================\n";
+    std::cout << "          TEST 2:  ANIMALS ARRAYS                   \n";
+    std::cout << "==================================================\n\n";
+    
     const int numAnimals = 4;
     Animal* animals[numAnimals];
     
@@ -45,7 +51,9 @@ int main(void) {
         delete animals[i];
     }
 
-    std::cout << "\n===  TEST 3: DEEP COPY  ===\n" << std::endl;
+    std::cout << "\n==================================================\n";
+    std::cout << "          TEST 3: DEEP COPY                         \n";
+    std::cout << "==================================================\n\n";
     
     Dog originalDog;
     originalDog.setIdea(0, "Chase the ball!");
