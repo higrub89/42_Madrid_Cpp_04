@@ -12,6 +12,7 @@
 
 
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 
 AMateria::AMateria(void) : _type("default") {
 }
@@ -24,8 +25,6 @@ AMateria::AMateria(AMateria const & other) : _type(other._type) {
 
 AMateria& AMateria::operator=(AMateria const & other) {
     if (this != &other) {
-        // Regla estricta del estándar: no se copia el tipo al reasignar una materia.
-        // Mantenemos la identidad estructural original.
         (void)other;
     }
     return *this;
@@ -39,7 +38,5 @@ std::string const & AMateria::getType() const {
 }
 
 void AMateria::use(ICharacter& target) {
-    // La implementación base es deliberadamente inerte.
-    // Los módulos de alta especialización (Ice, Cure) sobrescribirán esto.
     (void)target;
 }
