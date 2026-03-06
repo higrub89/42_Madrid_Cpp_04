@@ -33,8 +33,9 @@
     delete j;
     delete i;
 
-    std::cout << "\n=== TEST 2: Wrong versions (no polymorphism) ===\n" << std::endl;
-
+    std::cout << "\n========================================\n";
+    std::cout << "  TEST 2: WRONG NO POLYMORPHISM           \n";
+    std::cout << "========================================\n\n";
     const WrongAnimal* wrongMeta = new WrongAnimal();
     const WrongAnimal* wrongI = new WrongCat();
 
