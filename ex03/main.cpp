@@ -14,7 +14,6 @@ static void separator(std::string const & label)
 
 int main()
 {
-	// --- Subject test ---
 	separator("SUBJECT TEST");
 	{
 		IMateriaSource* src = new MateriaSource();
@@ -39,7 +38,6 @@ int main()
 		delete src;
 	}
 
-	// --- Test: full inventory ---
 	separator("FULL INVENTORY TEST");
 	{
 		Character hero("hero");
@@ -47,23 +45,20 @@ int main()
 		hero.equip(new Ice());
 		hero.equip(new Cure());
 		hero.equip(new Cure());
-		// This should print "inventory full"
 		AMateria* extra = new Ice();
 		hero.equip(extra);
-		delete extra; // must clean up manually since equip failed
+		delete extra; 
 	}
 
-	// --- Test: use with out-of-bounds / empty slot ---
 	separator("INVALID USE TEST");
 	{
 		Character alice("alice");
 		Character bob("bob");
-		alice.use(0, bob); // slot 0 is empty
+		alice.use(0, bob); 
 		alice.use(-1, bob);
 		alice.use(5, bob);
 	}
 
-	// --- Test: unequip and floor cleanup ---
 	separator("UNEQUIP / FLOOR TEST");
 	{
 		Character knight("knight");
@@ -71,20 +66,18 @@ int main()
 		knight.equip(new Cure());
 		knight.unequip(0);
 		knight.unequip(1);
-		knight.unequip(0); // already empty, should do nothing
-		// knight destructor should delete floor materias
+		knight.unequip(0);
 	}
 
-	// --- Test: deep copy of Character ---
 	separator("DEEP COPY TEST");
 	{
 		Character original("original");
 		original.equip(new Ice());
 		original.equip(new Cure());
 
-		Character copy(original); // copy constructor
+		Character copy(original);
 		Character assigned("assigned");
-		assigned = original;     // assignment operator
+		assigned = original;
 
 		Character target("target");
 		original.use(0, target);
@@ -92,12 +85,11 @@ int main()
 		assigned.use(1, target);
 	}
 
-	// --- Test: unknown materia type ---
 	separator("UNKNOWN MATERIA TEST");
 	{
 		MateriaSource src;
 		src.learnMateria(new Ice());
-		AMateria* m = src.createMateria("fire"); // unknown
+		AMateria* m = src.createMateria("fire");
 		if (m)
 		{
 			std::cout << "ERROR: should have returned NULL" << std::endl;

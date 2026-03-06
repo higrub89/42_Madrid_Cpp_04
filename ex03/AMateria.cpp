@@ -15,12 +15,15 @@
 #include "ICharacter.hpp"
 
 AMateria::AMateria(void) : _type("default") {
+    std::cout << "AMateria default constructed" << std::endl;
 }
 
 AMateria::AMateria(std::string const & type) : _type(type) {
+    std::cout << "AMateria [" << _type << "] constructed" << std::endl;
 }
 
 AMateria::AMateria(AMateria const & other) : _type(other._type) {
+    std::cout << "AMateria [" << _type << "] copy constructed" << std::endl;
 }
 
 AMateria& AMateria::operator=(AMateria const & other) {
@@ -31,6 +34,7 @@ AMateria& AMateria::operator=(AMateria const & other) {
 }
 
 AMateria::~AMateria(void) {
+    std::cout << "AMateria [" << _type << "] destroyed" << std::endl;
 }
 
 std::string const & AMateria::getType() const {
