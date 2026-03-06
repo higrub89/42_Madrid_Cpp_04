@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rhiguita <rhiguita@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: rhiguita <rhiguita@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 23:51:06 by rhiguita          #+#    #+#             */
-/*   Updated: 2026/02/23 23:51:11 by rhiguita         ###   ########.fr       */
+/*   Updated: 2026/03/06 14:34:42 by rhiguita         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "AMateria.hpp"
 #include "ICharacter.hpp"

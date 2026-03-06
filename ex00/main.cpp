@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rhiguita <rhiguita@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: rhiguita <rhiguita@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 17:31:06 by rhiguita          #+#    #+#             */
-/*   Updated: 2026/02/22 17:31:07 by rhiguita         ###   ########.fr       */
+/*   Updated: 2026/03/06 14:36:56 by rhiguita         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "WrongCat.hpp"
 #include <iostream>
 
-/* int main(void) {
+int main(void) {
     std::cout << "\n=== TEST 1: Basic polymorphism (should work) ===\n" << std::endl;
 
     const Animal* meta = new Animal();
@@ -58,10 +58,3 @@
 
     return 0;
 }
- */
-
- int main()
- {
-    Animal animal ("Perro");
-    return 0;
- }

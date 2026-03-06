@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Character.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rhiguita <rhiguita@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/06 14:34:49 by rhiguita          #+#    #+#             */
+/*   Updated: 2026/03/06 14:34:50 by rhiguita         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Character.hpp"
 
 Character::Character(std::string const & name) : _name(name), _floorCount(0)
@@ -28,7 +40,7 @@ Character & Character::operator=(Character const & other)
 	if (this == &other)
 		return *this;
 	_name = other._name;
-	// Delete existing inventory before deep copy
+	
 	for (int i = 0; i < 4; i++)
 	{
 		delete _inventory[i];
@@ -47,7 +59,6 @@ Character::~Character()
 {
 	for (int i = 0; i < 4; i++)
 		delete _inventory[i];
-	// Clean up any materias left on the floor
 	for (int i = 0; i < _floorCount; i++)
 		delete _floor[i];
 	std::cout << "Character [" << _name << "] destroyed" << std::endl;
@@ -78,7 +89,6 @@ void Character::unequip(int idx)
 {
 	if (idx < 0 || idx > 3 || _inventory[idx] == NULL)
 		return;
-	// Save to floor instead of deleting
 	if (_floorCount < 64)
 	{
 		_floor[_floorCount++] = _inventory[idx];

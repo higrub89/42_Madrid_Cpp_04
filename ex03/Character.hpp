@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rhiguita <rhiguita@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/06 14:35:05 by rhiguita          #+#    #+#             */
+/*   Updated: 2026/03/06 14:35:06 by rhiguita         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CHARACTER_HPP
 # define CHARACTER_HPP
 
@@ -9,7 +21,7 @@ class Character : public ICharacter
 	private:
 		std::string		_name;
 		AMateria*		_inventory[4];
-		AMateria*		_floor[64];  // track unequipped materias to avoid leaks
+		AMateria*		_floor[64];
 		int				_floorCount;
 
 	public:
